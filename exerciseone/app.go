@@ -5,7 +5,10 @@ import (
 	"os"
 	"log"
 	"bufio"
+	s "strings"
 )
+
+const problemsFilename = "./problems.csv"
 
 // check error
 func check(e error) {
@@ -15,8 +18,8 @@ func check(e error) {
 }
 
 // ReadFile to read file from disk
-func ReadFile(filename string) {
-	f, err := os.Open(filename)
+func openFile() {
+	f, err := os.Open(problemsFilename)
 	if err != nil {
         log.Fatal(err)
     }
@@ -27,12 +30,19 @@ func ReadFile(filename string) {
 		}
 	}()
 	
-    s := bufio.NewScanner(f)
-    for s.Scan() {
-        fmt.Println(s.Text())
-    }
-    err = s.Err()
+    scanner := bufio.NewScanner(f)
+    for scanner.Scan() {
+		problem, answer := s.Split(scanner.Text(), ',')
+        fmt.Println(problem, answer)
+	}
+	
+    err = scanner.Err()
     if err != nil {
         log.Fatal(err)
     }
+}
+
+// Run method to run the exercise 1
+func Run() {
+	openFile()
 }
