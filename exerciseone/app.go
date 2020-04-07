@@ -2,8 +2,8 @@ package exerciseone
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
+	"log"
 )
 
 // check error
@@ -22,7 +22,8 @@ func readFile(filename string) {
 	
 	defer func() {
         if err = f.Close(); err != nil {
-        log.Fatal(err)
+        	log.Fatal(err)
+		}
 	}()
 	
     s := bufio.NewScanner(f)
