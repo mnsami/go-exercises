@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"log"
+	"bufio"
 )
 
 // check error
