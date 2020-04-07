@@ -14,8 +14,8 @@ func check(e error) {
 	}
 }
 
-// read file
-func readFile(filename string) {
+// ReadFile to read file from disk
+func ReadFile(filename string) {
 	f, err := os.Open(filename)
 	if err != nil {
         log.Fatal(err)
