@@ -1,11 +1,7 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/mnsami/go-exercises/exerciseone"
-)
+import "github.com/mnsami/go-exercises/exerciseone"
 
 func main() {
-	exerciseone.readFile("./problems.csb")
+	exerciseone.Run()
 }
