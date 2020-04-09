@@ -1,4 +1,4 @@
-package exerciseone
+package quiz
 
 import (
 	"bufio"
