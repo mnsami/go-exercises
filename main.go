@@ -1,9 +1,7 @@
 package main
 
-import (
-	"github.com/mnsami/go-exercises/exerciseone"
-)
+import "github.com/mnsami/go-exercises/quiz"
 
 func main() {
-	exerciseone.Run()
+	quiz.Run()
 }
